@@ -73,14 +73,14 @@
                         <?php if ($invoice->user_address_2) {
                             echo htmlsc($invoice->user_address_2) . '<br>';
                         } ?>
+                        <?php if ($invoice->user_zip) {
+                            echo htmlsc($invoice->user_zip) . ' ';
+                        } ?>
                         <?php if ($invoice->user_city) {
-                            echo htmlsc($invoice->user_city) . ' ';
+                            echo htmlsc($invoice->user_city) . '<br>';
                         } ?>
                         <?php if ($invoice->user_state) {
-                            echo htmlsc($invoice->user_state) . ' ';
-                        } ?>
-                        <?php if ($invoice->user_zip) {
-                            echo htmlsc($invoice->user_zip) . '<br>';
+                            echo htmlsc($invoice->user_state) . '<br>';
                         } ?>
                         <?php if ($invoice->user_phone) { ?><?php echo trans('phone_abbr'); ?>: <?php echo htmlsc($invoice->user_phone); ?>
                             <br><?php } ?>
@@ -104,14 +104,14 @@
                         <?php if ($invoice->client_address_2) {
                             echo htmlsc($invoice->client_address_2) . '<br>';
                         } ?>
+                        <?php if ($invoice->client_zip) {
+                            echo htmlsc($invoice->client_zip) . ' ';
+                        } ?>
                         <?php if ($invoice->client_city) {
-                            echo htmlsc($invoice->client_city) . ' ';
+                            echo htmlsc($invoice->client_city) . '<br>';
                         } ?>
                         <?php if ($invoice->client_state) {
-                            echo htmlsc($invoice->client_state) . ' ';
-                        } ?>
-                        <?php if ($invoice->client_zip) {
-                            echo htmlsc($invoice->client_zip) . '<br>';
+                            echo htmlsc($invoice->client_state) . '<br>';
                         } ?>
                         <?php if ($invoice->client_phone) {
                             echo trans('phone_abbr') . ': ' . htmlsc($invoice->client_phone); ?>

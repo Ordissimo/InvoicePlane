@@ -80,14 +80,14 @@
                         <?php if ($quote->user_address_2) {
                             echo htmlsc($quote->user_address_2) . '<br>';
                         } ?>
+                        <?php if ($quote->user_zip) {
+                            echo htmlsc($quote->user_zip) . ' ';
+                        } ?>
                         <?php if ($quote->user_city) {
-                            echo htmlsc($quote->user_city) . ' ';
+                            echo htmlsc($quote->user_city) . '<br>';
                         } ?>
                         <?php if ($quote->user_state) {
-                            echo htmlsc($quote->user_state) . ' ';
-                        } ?>
-                        <?php if ($quote->user_zip) {
-                            echo htmlsc($quote->user_zip) . '<br>';
+                            echo htmlsc($quote->user_state) . '<br>';
                         } ?>
                         <?php if ($quote->user_phone) { ?><?php echo trans('phone_abbr'); ?>: <?php echo htmlsc($quote->user_phone); ?>
                             <br><?php } ?>
@@ -111,14 +111,14 @@
                         <?php if ($quote->client_address_2) {
                             echo htmlsc($quote->client_address_2) . '<br>';
                         } ?>
+                        <?php if ($quote->client_zip) {
+                            echo htmlsc($quote->client_zip) . ' ';
+                        } ?>
                         <?php if ($quote->client_city) {
-                            echo htmlsc($quote->client_city) . ' ';
+                            echo htmlsc($quote->client_city) . '<br>';
                         } ?>
                         <?php if ($quote->client_state) {
-                            echo htmlsc($quote->client_state) . ' ';
-                        } ?>
-                        <?php if ($quote->client_zip) {
-                            echo htmlsc($quote->client_zip) . '<br>';
+                            echo htmlsc($quote->client_state) . '<br>';
                         } ?>
                         <?php if ($quote->client_phone) {
                             echo trans('phone_abbr') . ': ' . htmlsc($quote->client_phone); ?>

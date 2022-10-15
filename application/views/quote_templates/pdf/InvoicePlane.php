@@ -32,22 +32,19 @@
         }
         if ($quote->client_city || $quote->client_state || $quote->client_zip) {
             echo '<div>';
+            if ($quote->client_zip) {
+                echo htmlsc($quote->client_zip) . ' ';
+            }
             if ($quote->client_city) {
                 echo htmlsc($quote->client_city) . ' ';
             }
-            if ($quote->client_state) {
-                echo htmlsc($quote->client_state) . ' ';
-            }
-            if ($quote->client_zip) {
-                echo htmlsc($quote->client_zip);
-            }
             echo '</div>';
-        }
-        if ($quote->client_state) {
-            echo '<div>' . htmlsc($quote->client_state) . '</div>';
         }
         if ($quote->client_country) {
             echo '<div>' . get_country_name(trans('cldr'), $quote->client_country) . '</div>';
+        }
+        if ($quote->client_state) {
+            echo '<div>' . htmlsc($quote->client_state) . '</div>';
         }
 
         echo '<br/>';
@@ -73,19 +70,19 @@
         }
         if ($quote->user_city || $quote->user_state || $quote->user_zip) {
             echo '<div>';
-            if ($quote->user_city) {
-                echo htmlsc($quote->user_city) . ' ';
-            }
-            if ($quote->user_state) {
-                echo htmlsc($quote->user_state) . ' ';
-            }
             if ($quote->user_zip) {
-                echo htmlsc($quote->user_zip);
+                echo htmlsc($quote->user_zip) . ' ';
+            }
+            if ($quote->user_city) {
+                echo htmlsc($quote->user_city);
             }
             echo '</div>';
         }
         if ($quote->user_country) {
             echo '<div>' . get_country_name(trans('cldr'), $quote->user_country) . '</div>';
+        }
+        if ($quote->user_state) {
+            echo '<div>' . htmlsc($quote->user_state) . '</div>';
         }
 
         echo '<br/>';
@@ -106,8 +103,11 @@
     <div class="invoice-details clearfix">
         <table>
             <tr>
-                <td><?php echo trans('quote_date') . ':'; ?></td>
-                <td><?php echo date_from_mysql($quote->quote_date_created, true); ?></td>
+		<td rowspan="4" width="400px" align="left" valign="top" style="border: 2px solid black;width: 350px";>
+                   &nbsp;<strong>Bon pour accord</strong></td>
+                <td rowspan="4" style="width: 100px;">&nbsp;</td>
+                <td style="width: 150px;"><?php echo trans('quote_date') . ':'; ?></td>
+                <td style="width: 150px;"><?php echo date_from_mysql($quote->quote_date_created, true); ?></td>
             </tr>
             <tr>
                 <td><?php echo trans('expires') . ': '; ?></td>
@@ -116,6 +116,10 @@
             <tr>
                 <td><?php echo trans('total') . ': '; ?></td>
                 <td><?php echo format_currency($quote->quote_total); ?></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     </div>
